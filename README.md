@@ -9,4 +9,4 @@ Demo update
 <!--END_SECTION:activity-->
 Demo update
 
-test for merge2
+test for merge3
