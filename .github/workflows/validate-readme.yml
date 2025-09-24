@@ -1,0 +1,14 @@
+name: Validate README Markers
+on: [pull_request]
+
+jobs:
+  check-markers:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Check README markers
+        run: |
+          if ! grep -q '<!--START_SECTION:activity-->' README.md; then
+            echo "README marker missing!"
+            exit 1
+          fi
