@@ -6,3 +6,4 @@ This repository demonstrates automatic updates to README using GitHub Actions.
 
 <!--START_SECTION:activity-->
 <!--END_SECTION:activity-->
+Demo update
