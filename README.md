@@ -8,3 +8,5 @@ This repository demonstrates automatic updates to README using GitHub Actions.
 Demo update
 <!--END_SECTION:activity-->
 Demo update
+
+test for merge2
