@@ -15,8 +15,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Update README
-        run: echo "Demo update" >> README.md
+
+      - name: Update README (idempotent)
+        run: |
+          # 將 <!--START_SECTION:activity--> 到 <!--END_SECTION:activity--> 區塊覆蓋為新的內容
+          awk '
+            /<!--START_SECTION:activity-->/ {print; print "Demo update"; skip=1; next}
+            /<!--END_SECTION:activity-->/ {skip=0}
+            !skip {print}
+          ' README.md > README.tmp && mv README.tmp README.md
+
       - uses: EndBug/add-and-commit@v9
         with:
           author_name: github-actions
